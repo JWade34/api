@@ -1,0 +1,52 @@
+<%= flash[:notice] %>
+
+<h4 style="text-align:center">Import Data</h4>
+<div class="container" align="center" style="background:gray">
+  <%= form_tag import_clients_path, multipart: true, class: 'form-inline', role: 'form' do %>
+    <%= file_field_tag :file, class: 'form-group btn-default', style: 'width:215px' %>
+    <%= button_tag "Import CSV", class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+
+<div class="container">
+  <div class="pull-right">
+  <%= paginate @clients %>
+</div>
+<table class="table table-condensed table-hover" >
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>uuid</th>
+      <th>name</th>
+      <th>address</th>
+      <th>address2</th>
+      <th>city</th>
+      <th>state</th>
+      <th>zip</th>
+      <th>country</th>
+      <th>phone</th>
+      <th>website</th>
+      <th>created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.id %></td>
+      <td><%= client.uuid %></td>
+      <td><%= client.name %></td>
+      <td><%= client.address %></td>
+      <td><%= client.address2 %></td>
+      <td><%= client.city %></td>
+      <td><%= client.state %></td>
+      <td><%= client.zip %></td>
+      <td><%= client.country %></td>
+      <td><%= client.phone %></td>
+      <td><%= client.website %></td>
+      <td><%= client.created_at.strftime("%m/%d/%Y") %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

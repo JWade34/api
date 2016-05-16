@@ -1,0 +1,37 @@
+
+.well h3 {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#signupForm .input-group {
+    margin-bottom: 20px;
+}
+
+.input-group-addon .icon-2x {
+    width: 28px;
+    min-width: 28px;
+    display: inline-block;
+}
+
+.inline-block > li {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+}
+
+@media (max-width: 768px) {
+    #social-sign-in .icon-5x {
+        font-size: 7em;
+    }
+}
+@media (max-width: 480px) {
+    #social-sign-in .icon-5x {
+        font-size: 4.5em;
+    }
+}
+@media (min-width: 1199px) {
+    #social-sign-in .icon-5x {
+        font-size: 7em;
+    }
+}
