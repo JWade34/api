@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to '/', :flash => { :success => "Welcome!" }
 
     else
-      redirect_to '/login', :flash => { :alert => "Please Login First" }
+      redirect_to '/login', :flash => { :alert => "Please Signup First or Login" }
     end
   end
 
