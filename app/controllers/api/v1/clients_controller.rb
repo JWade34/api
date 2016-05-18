@@ -1,7 +1,7 @@
 class Api::V1::ClientsController < Api::V1::BaseController
 
   def index
-    clients = Client.page().per(50)
+    clients = Client.all.page(params[:page]).per(50)
     render json: clients
   end
 

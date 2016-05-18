@@ -4,12 +4,13 @@ class ClientsController < ApplicationController
   layout "main"
 
   def index
-    @clients = Client.all.page(params[:page])
+    @clients = Client.all.page(params[:page]).per(50)
   end
 
   def import
-    Client.import(params[:file])
-    redirect_to root_path, notice: "Data Imported!"
+    if Client.import(params[:file])
+      redirect_to root_path, :flash => { :alert => "Data uploaded" }
+    end
   end
 
 end
